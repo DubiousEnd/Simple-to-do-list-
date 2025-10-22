@@ -25,8 +25,7 @@ def load_tasks():
                 if line.startswith("[x] ") or line.startswith("[ ] "):
                     tasks.append(line)
                     continue
-
-                # Fallback: treat as not-done task text
+ 
                 tasks.append(f"[ ] {line}")
     except FileNotFoundError:
         pass
@@ -70,7 +69,7 @@ def main():
         
         elif choice == "2":
             text = input("Enter new Task: ")
-            tasks.append(f"[ ] {_strip_mark(text)}")   # <- store as string
+            tasks.append(f"[ ] {_strip_mark(text)}")    
             save_tasks(tasks)
             print("✅ Task added successfully! \n")
 
@@ -83,7 +82,7 @@ def main():
                 if 1 <= num <= len(tasks):
                     raw = tasks[num - 1]
                     text_only = _strip_mark(raw)
-                    tasks[num - 1] = f"[x] {text_only}"  # <- force done
+                    tasks[num - 1] = f"[x] {text_only}" 
                     save_tasks(tasks)
                     print("✔ Task marked as done!\n")
                 else:
