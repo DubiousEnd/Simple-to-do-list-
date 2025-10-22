@@ -1,0 +1,2 @@
+[ ] Learn DSA
+[x] Make notes for statistics
